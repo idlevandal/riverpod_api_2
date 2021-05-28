@@ -32,10 +32,19 @@ class HomePage extends StatelessWidget{
     return Scaffold(
       backgroundColor: Color(0xFFECF1F9),
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: Center(
-            child: Results()
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color(0xFFDDDDDD), Color(0xFFC8C8C8)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Center(
+              child: Results()
+          ),
         ),
       ),
     );
@@ -71,8 +80,8 @@ class Results extends ConsumerWidget {
                     )
                 ),
                 child: ListTile(
-                  leading: Icon(Icons.info_outline_rounded, color: Colors.blue,),
-                  trailing: Icon(Icons.album_outlined, color: Colors.green,),
+                  leading: Icon(Icons.info_outline_rounded, color: Colors.blue.shade400,),
+                  trailing: Icon(Icons.account_circle_outlined, color: Colors.blue.shade600,),
                   title: Text(data[index].name ?? 'huh????'),
                 ),
               ),
